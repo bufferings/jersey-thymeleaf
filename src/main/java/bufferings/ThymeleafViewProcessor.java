@@ -30,12 +30,10 @@ public class ThymeleafViewProcessor implements ViewProcessor<String> {
   @Context
   ThreadLocal<HttpServletResponse> responseInvoker;
 
-  TemplateResolver templateResolver;
-
   TemplateEngine templateEngine;
 
   public ThymeleafViewProcessor() {
-    templateResolver = new ServletContextTemplateResolver();
+    TemplateResolver templateResolver = new ServletContextTemplateResolver();
     templateResolver.setPrefix("/WEB-INF/templates/");
     templateResolver.setSuffix(".html");
     templateResolver.setTemplateMode("HTML5");
